@@ -1,0 +1,6 @@
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\bin\Debug\karszam.exe.config
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\bin\Debug\karszam.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\bin\Debug\karszam.pdb
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\obj\Debug\karszam.csprojResolveAssemblyReference.cache
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\obj\Debug\karszam.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\karszam\obj\Debug\karszam.pdb
