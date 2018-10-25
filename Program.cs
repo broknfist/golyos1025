@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: diak
+ * User: zsolt
  * Date: 2018. 10. 25.
- * Time: 12:51
+ * Time: 21:10
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */

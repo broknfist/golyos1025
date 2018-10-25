@@ -1,0 +1,12 @@
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\bin\Debug\golyonehezebb.exe.config
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\bin\Debug\golyonehezebb.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\bin\Debug\golyonehezebb.pdb
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\obj\Debug\golyonehezebb.csprojResolveAssemblyReference.cache
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\obj\Debug\golyonehezebb.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\golyonehezebb\golyonehezebb\obj\Debug\golyonehezebb.pdb
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\bin\Debug\golyonehezebb.exe.config
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\bin\Debug\golyonehezebb.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\bin\Debug\golyonehezebb.pdb
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\obj\Debug\golyonehezebb.csprojResolveAssemblyReference.cache
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\obj\Debug\golyonehezebb.exe
+C:\Users\zsolt\OneDrive\Documents\SharpDevelop Projects\karszam\golyos1025\obj\Debug\golyonehezebb.pdb
