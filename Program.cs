@@ -1,57 +1,152 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: zsolt
- * Date: 2018. 10. 01.
- * Time: 10:30
+ * User: diak
+ * Date: 2018. 10. 25.
+ * Time: 12:51
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 
-namespace karszam
+namespace golyonehezebb
 {
 	class Program
 	{
-		public static void Main(string[] args)
+		public static int Meres(List<elem> doboz)
 		{
-			String szoveg=Console.ReadLine();
-			//szoveg="Ez itt a vizsgálandó szöveg, ez esetben adott";
-			Random rand=new Random();
-			int hossz=szoveg.Length/3;
-			if (hossz>24) {
-				hossz=24;
+			int suly=0;
+			for (int i = 0; i < doboz.Count; i++) {
+				suly+=doboz[i].suly;
 			}
-			char[] keresendok=new char[hossz];
-			for (int i = 0; i < keresendok.Length; i++) {
-				keresendok[i]=Convert.ToChar(rand.Next(26)+97); //csak kisbetűk, lehetne 65-90 és 97-122, és nézhetné az ékezetes betűket is, de indulnom kell órára
+			return suly;
+		}
+		public static List<elem> DobozCsinal(int darabszam)
+		{
+			List<elem> doboz=new List<elem>();
+			
+			
+			for (int i = 0; i < darabszam; i++) {
+				elem peldany=new elem();
+				peldany.suly=1;
+				peldany.index=i;
+				doboz.Add(peldany);
 			}
-			int[] darabszam=new int[hossz];
-			for (int i = 0; i < darabszam.Length; i++) {
-				darabszam[i]=0;
+			
+			return doboz;
+		}
+		
+		public static void Keres(List<elem> doboz)
+		{
+			List<elem> dobozelsoharmada=new List<elem>();
+			List<elem> dobozmasodikharmada=new List<elem>();
+			List<elem> dobozharmadikharmada=new List<elem>();
+			int index=0;
+			int maradek=doboz.Count-doboz.Count/3-doboz.Count/3;
+			Console.WriteLine("maradek:{0}",maradek);
+			for (int i = 0; i < doboz.Count/3; i++) {
+				elem peldany=new elem();
+				peldany.suly=doboz[index].suly;
+				peldany.index=doboz[index].index;
+				dobozelsoharmada.Add(peldany);
+				index++;
 			}
-			for (int i = 0; i < szoveg.Length; i++) {
-				for (int j = 0; j < keresendok.Length; j++) {
-					if (szoveg[i]==keresendok[j]) {
-						darabszam[j]++;
-					}
-				}
+			for (int i = 0; i < doboz.Count/3; i++) {
+				elem peldany=new elem();
+				peldany.suly=doboz[index].suly;
+				peldany.index=doboz[index].index;
+				dobozmasodikharmada.Add(peldany);
+				index++;
 			}
-			Console.WriteLine(szoveg);
-			for (int i = 0; i < keresendok.Length; i++) {
-				Console.WriteLine("{0}:{1}",keresendok[i],darabszam[i]);
-			}
-			for (int i = 0; i < szoveg.Length; i++) {
-				for (int j = 0; j < keresendok.Length; j++) {
-					if (szoveg[i]==keresendok[j]) {
-						Console.ForegroundColor=ConsoleColor.Blue;
-					}
-				}
-				Console.Write(szoveg[i]);
-				Console.ForegroundColor=ConsoleColor.White;
+			for (int i = 0; i < maradek; i++) {
+				elem peldany=new elem();
+				peldany.suly=doboz[index].suly;
+				peldany.index=doboz[index].index;
+				dobozharmadikharmada.Add(peldany);
+				index++;
 			}
 			Console.WriteLine();
-			Console.Write("Press any key to continue . . . ");
-			Console.ReadKey(true);
+			Console.WriteLine(Meres(dobozelsoharmada));
+			Console.WriteLine(Meres(dobozmasodikharmada));
+			Console.WriteLine(Meres(dobozharmadikharmada));
+			if (Meres(doboz)<6) {
+				foreach (var i in doboz) {
+					Console.WriteLine("golyó indexe:"+i.index+" golyó súlya:"+i.suly);
+				}
+			} else {
+				if (Meres(dobozelsoharmada)>Meres(dobozmasodikharmada)) {
+					Keres(dobozelsoharmada);
+				}
+				if (Meres(dobozelsoharmada)<Meres(dobozmasodikharmada)) {
+					Keres(dobozmasodikharmada);
+				}
+				if (Meres(dobozelsoharmada)==Meres(dobozmasodikharmada)) {
+					Keres(dobozharmadikharmada);
+				}
+			}
+			
+			
+		}
+		
+		public class elem
+		{
+			public int suly { get; set; }
+			public int index { get; set; }
+		}
+		
+		public static void Main(string[] args)
+		{
+			int darabszam=50000;
+			List<elem> doboz;
+			doboz=DobozCsinal(darabszam);
+			Random vsz=new Random();
+			doboz[vsz.Next(darabszam)].suly=2;
+			/*
+			foreach (var i in doboz) {
+				Console.WriteLine(i.index+","+i.suly);
+			}
+			*/
+			Console.WriteLine(Meres(doboz));
+			Keres(doboz);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			Console.ReadLine();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 	}
 }
