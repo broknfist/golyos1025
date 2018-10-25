@@ -85,10 +85,27 @@ namespace golyonehezebb
 			 * és így mindig a harmadik dobozba kerül nehezebb golyó->végtelen ciklus->stack overflow
 			 * Megoldás: le kéne kezelni, hogy az első két dobozba kerüljön golyó, hogy a kétkarú mérlegemmel el tudjam dönteni, melyik a hunyó
 			 * És akkor már szépen is meg lehetne oldani a feladatot
+			 * Hát, elvileg kész
 			 */
-			if (doboz.Count<3) {
-				foreach (var i in doboz) {
-					Console.WriteLine("golyó indexe:"+i.index+" golyó súlya:"+i.suly);
+			if (doboz.Count<=3) {
+				if (doboz.Count==1) {
+					Console.WriteLine("{0}. sorszámú golyó volt nehezebb, egy golyó maradt az utolsó dobozra",doboz[0].index);
+				}
+				if (doboz.Count==2) {
+					if (doboz[0].suly>doboz[1].suly) {
+						Console.WriteLine("{0}. sorszámú golyó volt nehezebb, két golyó maradt az utolsó dobozra, az elsőben volt",doboz[0].index);
+					} else {
+						Console.WriteLine("{0}. sorszámú golyó volt nehezebb, két golyó maradt az utolsó dobozra, a másodikban volt",doboz[1].index);
+					}
+				}
+				if (doboz.Count==3) {
+					if (doboz[0].suly==doboz[1].suly) {
+						Console.WriteLine("{0}. sorszámú golyó volt nehezebb, három golyó maradt az utolsó dobozra, a harmadikban volt",doboz[2].index);
+					} else if (doboz[0].suly<doboz[1].suly) {
+						Console.WriteLine("{0}. sorszámú golyó volt nehezebb, három golyó maradt az utolsó dobozra, a másodikban volt",doboz[1].index);
+					} else {
+						Console.WriteLine("{0}. sorszámú golyó volt nehezebb, három golyó maradt az utolsó dobozra, az elsőben volt",doboz[0].index);
+					}
 				}
 			} else {
 				if (Meres(elsodoboz)==Meres(masodikdoboz)) {
@@ -113,7 +130,8 @@ namespace golyonehezebb
 		
 		public static void Main(string[] args)
 		{
-			int darabszam=50000;
+			int darabszam=1000000; //működik 1-től, hát, itthon már 60 milliónál out of memory, 30 milliónál is, kéne using, hogy kitakarítsa a haszontalanná vált listákat memóriából
+								//huszonöt millióra lefut, 16G memóriával
 			List<elem> doboz;
 			doboz=DobozCsinal(darabszam);
 			Random vsz=new Random();
@@ -124,45 +142,7 @@ namespace golyonehezebb
 			*/
 			Console.WriteLine(Meres(doboz));
 			Keres(doboz);
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			Console.ReadLine();
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		}
 	}
 }
