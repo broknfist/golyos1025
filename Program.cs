@@ -13,10 +13,10 @@ namespace golyonehezebb
 {
 	class Program
 	{
-		public static int Meres(List<elem> doboz)
+		public static double Meres(List<elem> doboz)
 		{
 			//megméri a doboz súlyát
-			int suly=0;
+			double suly=0;
 			for (int i = 0; i < doboz.Count; i++) {
 				suly+=doboz[i].suly;
 			}
@@ -124,18 +124,18 @@ namespace golyonehezebb
 		
 		public class elem
 		{
-			public int suly { get; set; }
+			public double suly { get; set; }
 			public int index { get; set; }
 		}
 		
 		public static void Main(string[] args)
 		{
 			int darabszam=1000000; //működik 1-től, hát, itthon már 60 milliónál out of memory, 30 milliónál is, kéne using, hogy kitakarítsa a haszontalanná vált listákat memóriából
-								//huszonöt millióra lefut, 16G memóriával
+								//huszonöt millióra lefut, 16G memóriával, legalábbis addig, amíg integer volt a súly
 			List<elem> doboz;
 			doboz=DobozCsinal(darabszam);
 			Random vsz=new Random();
-			doboz[vsz.Next(darabszam)].suly=2; //egy golyó-t kicserélek kétszer olyan nehézre
+			doboz[vsz.Next(darabszam)].suly=1.01; //egy golyó-t kicserélek kétszer olyan nehézre
 			/*
 			 * Egy dobozban van x darab golyóm, abból az egyik nehezebb, mint a többi
 			 * Van egy két karú mérlegem
