@@ -15,7 +15,7 @@ namespace golyonehezebb
 	{
 		public static double Meres(List<elem> doboz)
 		{
-			//megméri a doboz súlyát
+			//megméri a doboz súlyát, belegondolva jobb lett volna egy mérleg metódus, ami két lista közül eldönti melyik a nehezebb
 			double suly=0;
 			for (int i = 0; i < doboz.Count; i++) {
 				suly+=doboz[i].suly;
